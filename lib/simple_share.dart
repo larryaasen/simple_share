@@ -7,14 +7,14 @@ class SimpleShare {
 
   static Future<String> share(
       {String msg,
-      List<Any> objects,
+      Uint8List imageBytes,
       String uri,
       String title,
       String subject,
       String type}) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'msg': msg,
-      'objects': objects,
+      'imageBytes': imageBytes,
       'uri': uri,
       'title': title,
       'subject': subject,
