@@ -43,8 +43,9 @@ public class SwiftSimpleSharePlugin: NSObject, FlutterPlugin {
             }
             
             if let imageData = args!["imageBytes"] as? FlutterStandardTypedData {
-                let image = UIImage(data: imageData.data)
-                sharedItems.append(image)
+                if let image = UIImage(data: imageData.data) {
+                    sharedItems.append(image)
+                }
             }
             
             let activityViewController = UIActivityViewController(activityItems: sharedItems, applicationActivities: nil)
