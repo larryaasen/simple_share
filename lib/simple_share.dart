@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 import 'package:flutter/services.dart';
 
 class SimpleShare {
@@ -7,12 +8,14 @@ class SimpleShare {
 
   static Future<String> share(
       {String msg,
+      Uint8List imageBytes,
       String uri,
       String title,
       String subject,
       String type}) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'msg': msg,
+      'imageBytes': imageBytes,
       'uri': uri,
       'title': title,
       'subject': subject,
